@@ -5,7 +5,7 @@ import loginData from '../testData/login.json';
 
 
 
-for (const { label, username, password } of loginData) {
+for (const { label, username, password } of loginData.valid) {
   test(`login test - ${label}`, async ({ page, homePage }) => {
 
     await page.waitForLoadState("networkidle");
@@ -20,3 +20,15 @@ for (const { label, username, password } of loginData) {
     await expect(Header2).toBeVisible();
   });
 }
+
+test('invalid user - ${invalid.label}', async({page, homePage}) =>{
+
+    await page.waitForLoadState("networkidle");
+
+    await homePage.launchURL();
+    await homePage.clickOnLoginButton(loginData.invalid.username, loginData.invalid.password);
+    const errorMessage = page.getByText('Epic sadface: Sorry, this user has been locked out.');
+    await expect(errorMessage).toBeVisible();
+
+
+})

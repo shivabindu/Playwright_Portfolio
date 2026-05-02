@@ -1,12 +1,19 @@
-[
-  {
-    "label": "standard_user",
-    "username": "standard_user",
-    "password": "secret_sauce"
-  },
-  {
-    "label": "problem_user",
-    "username": "problem_user",
+{
+  "valid": [
+    {
+      "label": "standard_user",
+      "username": "standard_user",
+      "password": "secret_sauce"
+    },
+    {
+      "label": "problem_user",
+      "username": "problem_user",
+      "password": "secret_sauce"
+    }
+  ],
+  "invalid": {
+    "label": "locked_out_user",
+    "username": "locked_out_user",
     "password": "secret_sauce"
   }
-]
+}
