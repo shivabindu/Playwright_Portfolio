@@ -1,7 +1,7 @@
 
 import { test } from '../fixtures/login';
 import { expect } from '@playwright/test';  
-import loginData from '../testData/login.json'; 
+import {loginData} from '../testData/login.json'; 
 
 
 
