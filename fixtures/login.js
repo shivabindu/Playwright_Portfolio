@@ -7,5 +7,6 @@ export const test = base.extend({
         const homePage = new HomePage(page);
         await use(homePage);
         await page.close();
+        console.log("Closing the page after test execution");
     }
 })  
